@@ -14,21 +14,24 @@ class BooksScreen extends StatelessWidget {
 
   final BooksStore booksStore = BooksStore();
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
-    void openEndDrawer() {
-      _scaffoldKey.currentState!.openEndDrawer();
-    }
-
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size(
+          double.infinity, 70,
+          //size.height * 0.10,
+        ),
+        child: CustomNavigationBar(),
+      ),
       key: _scaffoldKey,
-      endDrawer: Drawer(),
+      endDrawer: const Drawer(),
       backgroundColor: const Color.fromRGBO(242, 242, 209, 1),
       body: ListView(
         children: [
-          CustomNavigationBar(),
+          //CustomNavigationBar(),
           Padding(
             padding: const EdgeInsets.only(
               top: 43,

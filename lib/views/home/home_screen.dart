@@ -17,10 +17,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    //final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size(
+        preferredSize: const Size(
           double.infinity, 70,
           //size.height * 0.10,
         ),
