@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:plataforma_rede_campo/components/newHeader/component/search_whole_site_dialog/components/navigation_bar_article_tile.dart';
 import '../../../../models/article.dart';
 import '../../../../models/book.dart';
 import '../../../../models/book_chapter.dart';
@@ -8,6 +7,7 @@ import '../../../../models/project.dart';
 import '../../../../stores/navigation_bar_search_store.dart';
 import '../../../empty_search_dialog.dart';
 import '../../../search_field.dart';
+import 'components/navigation_bar_article_tile.dart';
 import 'components/navigation_bar_book_chapter_tile.dart';
 import 'components/navigation_bar_book_tile.dart';
 import 'components/navigation_bar_project_tile.dart';

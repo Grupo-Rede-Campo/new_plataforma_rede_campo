@@ -7,6 +7,7 @@ import 'package:plataforma_rede_campo/models/book.dart';
 import 'package:plataforma_rede_campo/stores/books_store.dart';
 import 'package:plataforma_rede_campo/utils/app_routes.dart';
 import 'package:plataforma_rede_campo/views/create_book/create_book_screen.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../models/menu_choice.dart';
@@ -25,19 +26,29 @@ class BooksTile extends StatelessWidget {
   ];
 
   TextStyle style = const TextStyle(
-    fontSize: 21,
+    fontSize: 18,
     fontWeight: FontWeight.w600,
     color: Color.fromRGBO(37, 66, 43, 1),
   );
 
   @override
   Widget build(BuildContext context) {
-    return UnconstrainedBox(
+    final size = MediaQuery.of(context).size;
+    return ResponsiveWrapper(
+      maxWidth: 1300,
+      minWidth: 1300,
+      breakpoints: const [
+        ResponsiveBreakpoint.autoScaleDown(350, name: MOBILE),
+        ResponsiveBreakpoint.autoScaleDown(600, name: TABLET),
+        ResponsiveBreakpoint.autoScaleDown(901, name: DESKTOP),
+      ],
+      defaultScale: true,
       child: Container(
-        margin: EdgeInsets.only(bottom: 50),
-        padding: EdgeInsets.all(14),
-        height: 369,
-        width: 1228,
+        constraints: const BoxConstraints(
+          maxHeight: 350,
+        ),
+        margin: const EdgeInsets.only(left: 20, right: 20, bottom: 40),
+        padding: const EdgeInsets.only(left: 14, bottom: 14, top: 14),
         decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(19),
@@ -47,11 +58,13 @@ class BooksTile extends StatelessWidget {
           ),
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
+              alignment: Alignment.center,
+              constraints: const BoxConstraints(
+                maxWidth: 250,
+                maxHeight: 350,
               ),
               child: AspectRatio(
                 aspectRatio: 0.7,
@@ -78,31 +91,86 @@ class BooksTile extends StatelessWidget {
                   children: [
                     Text(
                       book.title!,
-                      style: style,
+                      style: style.copyWith(
+                        fontSize: ResponsiveValue(
+                          context,
+                          defaultValue: 18.0,
+                          valueWhen: [
+                            const Condition.smallerThan(
+                              name: DESKTOP,
+                              value: 16.0,
+                            ),
+                          ],
+                        ).value,
+                      ),
                     ),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Autores:',
-                          style: style,
+                          style: style.copyWith(
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 18.0,
+                              valueWhen: [
+                                const Condition.smallerThan(
+                                  name: DESKTOP,
+                                  value: 16.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
                         ),
                         Text(
                           book.authors!,
-                          style: style,
+                          style: style.copyWith(
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 18.0,
+                              valueWhen: [
+                                const Condition.smallerThan(
+                                  name: DESKTOP,
+                                  value: 16.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
                         ),
                       ],
                     ),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Editora:',
-                          style: style,
+                          style: style.copyWith(
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 18.0,
+                              valueWhen: [
+                                const Condition.smallerThan(
+                                  name: DESKTOP,
+                                  value: 16.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
                         ),
                         Text(
                           book.publisher!,
-                          style: style,
+                          style: style.copyWith(
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 18.0,
+                              valueWhen: [
+                                const Condition.smallerThan(
+                                  name: DESKTOP,
+                                  value: 16.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
                         ),
                       ],
                     ),
@@ -111,11 +179,33 @@ class BooksTile extends StatelessWidget {
                       children: [
                         Text(
                           'Ano:',
-                          style: style,
+                          style: style.copyWith(
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 18.0,
+                              valueWhen: [
+                                const Condition.smallerThan(
+                                  name: DESKTOP,
+                                  value: 16.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
                         ),
                         Text(
                           book.year!,
-                          style: style,
+                          style: style.copyWith(
+                            fontSize: ResponsiveValue(
+                              context,
+                              defaultValue: 18.0,
+                              valueWhen: [
+                                const Condition.smallerThan(
+                                  name: DESKTOP,
+                                  value: 16.0,
+                                ),
+                              ],
+                            ).value,
+                          ),
                         ),
                       ],
                     ),
@@ -123,12 +213,21 @@ class BooksTile extends StatelessWidget {
                       onTap: () {
                         _launchUrl(url: book.url!.trim());
                       },
-                      child: const Text(
+                      child: Text(
                         'Acesse aqui',
                         style: TextStyle(
-                          fontSize: 23,
+                          fontSize: ResponsiveValue(
+                            context,
+                            defaultValue: 18.0,
+                            valueWhen: [
+                              const Condition.smallerThan(
+                                name: DESKTOP,
+                                value: 16.0,
+                              ),
+                            ],
+                          ).value,
                           fontWeight: FontWeight.w400,
-                          color: Color.fromRGBO(37, 66, 43, 1),
+                          color: const Color.fromRGBO(37, 66, 43, 1),
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -139,8 +238,11 @@ class BooksTile extends StatelessWidget {
             ),
             if (userManagerStore.isLoggedAdm)
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.only(
+                  right: 14,
+                ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     PopupMenuButton<MenuChoice>(
                       position: PopupMenuPosition.under,
@@ -186,7 +288,7 @@ class BooksTile extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
           ],
         ),
       ),

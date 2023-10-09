@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:plataforma_rede_campo/components/bottom%20panel/botton%20panel.dart';
-import '../../components/newHeader/custom_navigation_bar.dart';
+
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 
 class WhoWeAreScreen extends StatelessWidget {
   const WhoWeAreScreen({Key? key}) : super(key: key);

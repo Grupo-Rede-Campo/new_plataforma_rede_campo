@@ -4,7 +4,7 @@ import 'package:plataforma_rede_campo/components/custom_rounded_left_button.dart
 import 'package:plataforma_rede_campo/components/custom_rounded_right_button.dart';
 import 'package:plataforma_rede_campo/stores/about_store.dart';
 import '../../components/bottom panel/botton panel.dart';
-import '../../components/newHeader/custom_navigation_bar.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import 'components/person_tile_colaborador.dart';
 import 'components/person_tile_membro.dart';
 import 'components/person_tile_pesquisador.dart';

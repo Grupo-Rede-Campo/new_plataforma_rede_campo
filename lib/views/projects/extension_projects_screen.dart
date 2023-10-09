@@ -4,8 +4,8 @@ import 'package:plataforma_rede_campo/models/project.dart';
 import 'package:plataforma_rede_campo/stores/project_store.dart';
 import 'package:plataforma_rede_campo/views/projects/components/project_tile.dart';
 import '../../components/bottom panel/botton panel.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../components/empty_search_dialog.dart';
-import '../../components/newHeader/custom_navigation_bar.dart';
 import '../../components/pagination_buttons_section.dart';
 import '../../components/title_page.dart';
 

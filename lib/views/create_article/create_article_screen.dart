@@ -4,9 +4,9 @@ import 'package:mobx/mobx.dart';
 import 'package:plataforma_rede_campo/models/article.dart';
 import 'package:plataforma_rede_campo/stores/create_article_store.dart';
 import '../../components/bottom panel/botton panel.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../components/error_box.dart';
 import '../../components/home_button.dart';
-import '../../components/newHeader/custom_navigation_bar.dart';
 import 'components/title_text_form_create_article_screen.dart';
 
 class CreateArticleScreen extends StatefulWidget {

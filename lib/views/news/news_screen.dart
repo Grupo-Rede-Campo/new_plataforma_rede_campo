@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:plataforma_rede_campo/components/newHeader/custom_navigation_bar.dart';
 import '../../components/bottom panel/botton panel.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../components/home_button.dart';
 import '../../components/rounded_right_button2.dart';
 import '../../models/news.dart';

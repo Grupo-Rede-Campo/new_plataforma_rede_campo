@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:plataforma_rede_campo/components/bottom%20panel/botton%20panel.dart';
-import 'package:plataforma_rede_campo/components/newHeader/custom_navigation_bar.dart';
 import 'package:plataforma_rede_campo/components/search_field.dart';
 import 'package:plataforma_rede_campo/components/title_page.dart';
 import 'package:plataforma_rede_campo/stores/book_chapter_store.dart';
 import 'package:plataforma_rede_campo/views/book_chapter/components/book_chapter_tile.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../components/empty_search_dialog.dart';
 import '../../components/pagination_buttons_section.dart';
 

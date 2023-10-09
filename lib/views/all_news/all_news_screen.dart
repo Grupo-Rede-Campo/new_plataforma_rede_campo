@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:plataforma_rede_campo/components/newHeader/custom_navigation_bar.dart';
 import 'package:plataforma_rede_campo/components/title_page.dart';
 import 'package:plataforma_rede_campo/stores/all_news_store.dart';
 import 'package:plataforma_rede_campo/views/all_news/components/news_tile.dart';
 import '../../components/bottom panel/botton panel.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../components/pagination_buttons_section.dart';
 import '../../components/search_field.dart';
 

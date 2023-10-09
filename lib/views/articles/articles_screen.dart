@@ -4,7 +4,7 @@ import 'package:plataforma_rede_campo/components/bottom%20panel/botton%20panel.d
 import 'package:plataforma_rede_campo/stores/articles_store.dart';
 import 'package:plataforma_rede_campo/views/articles/components/article_tile.dart';
 
-import '../../components/newHeader/custom_navigation_bar.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../components/pagination_buttons_section.dart';
 import '../../components/search_field.dart';
 import '../../components/title_page.dart';

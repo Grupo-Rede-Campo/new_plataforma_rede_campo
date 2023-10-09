@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:plataforma_rede_campo/components/bottom%20panel/botton%20panel.dart';
 import 'package:plataforma_rede_campo/components/sign_out_button.dart';
 import 'package:plataforma_rede_campo/views/home_screen_pesquisador/components/bottom_button.dart';
-import '../../components/newHeader/custom_navigation_bar.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../create_news/create_news_screen.dart';
 import '../create_project/create_project_screen.dart';
 import '../register/register_screen.dart';

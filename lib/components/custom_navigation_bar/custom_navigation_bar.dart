@@ -42,7 +42,7 @@ class CustomNavigationBar extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: SvgPicture.asset(
               'assets/images/logo_rede_campo_header.svg',
-              width: 150,
+              width: 100,
               fit: BoxFit.contain,
             ),
           ),

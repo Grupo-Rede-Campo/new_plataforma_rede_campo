@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:plataforma_rede_campo/components/rounded_left_button.dart';
 import 'package:plataforma_rede_campo/stores/login_store.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../components/error_box.dart';
-import '../../components/newHeader/custom_navigation_bar.dart';
 import 'components/alert_dialog_email_send.dart';
 import 'components/bar_button.dart';
-import 'components/navigation_button.dart';
 import 'components/title_text_form.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 

@@ -5,7 +5,7 @@ import 'package:plataforma_rede_campo/stores/books_store.dart';
 import 'package:plataforma_rede_campo/views/books/components/books_tile.dart';
 import 'package:plataforma_rede_campo/components/empty_search_dialog.dart';
 import 'package:plataforma_rede_campo/components/title_page.dart';
-import '../../components/newHeader/custom_navigation_bar.dart';
+import '../../components/custom_navigation_bar/custom_navigation_bar.dart';
 import '../../components/pagination_buttons_section.dart';
 import '../../components/search_field.dart';
 
@@ -28,8 +28,9 @@ class BooksScreen extends StatelessWidget {
       ),
       key: _scaffoldKey,
       endDrawer: const Drawer(),
-      backgroundColor: const Color.fromRGBO(242, 242, 209, 1),
       body: ListView(
+        physics: AlwaysScrollableScrollPhysics(),
+        shrinkWrap: true,
         children: [
           //CustomNavigationBar(),
           Padding(
@@ -92,34 +93,36 @@ class BooksScreen extends StatelessWidget {
                         ),
                       );
                     }
-                    return Column(
-                      children: [
-                        ListView.builder(
-                          padding: const EdgeInsets.only(
-                            top: 100,
-                          ),
-                          itemCount: booksStore.booksList.length,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) => SizedBox(
-                            child: BooksTile(
+                    return Container(
+                      constraints: const BoxConstraints(maxWidth: 1300),
+                      child: Column(
+                        children: [
+                          ListView.builder(
+                            padding: const EdgeInsets.only(
+                              top: 100,
+                            ),
+                            itemCount: booksStore.booksList.length,
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemBuilder: (context, index) => BooksTile(
                               book: booksStore.booksList[index],
                               booksStore: booksStore,
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 50,
-                        ),
-                        PaginationButtonSection(
-                          page: booksStore.page,
-                          numberItens: booksStore.numberItens,
-                          itemsPerPage: 10,
-                          visiblePages: 5,
-                          setPage: (int page) {
-                            booksStore.setPage(page);
-                          },
-                        ),
-                      ],
+                          const SizedBox(
+                            height: 50,
+                          ),
+                          PaginationButtonSection(
+                            page: booksStore.page,
+                            numberItens: booksStore.numberItens,
+                            itemsPerPage: 10,
+                            visiblePages: 5,
+                            setPage: (int page) {
+                              booksStore.setPage(page);
+                            },
+                          ),
+                        ],
+                      ),
                     );
                   },
                 )
